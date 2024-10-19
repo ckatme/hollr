@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://dwsulfv3ld1oq"
+path="res://.godot/imported/aaaaaaaaa-export.png-b6a51feeaf42d5d1a1c29b509bee67cb.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://aaaaaaaaa-export.png"
+dest_files=["res://.godot/imported/aaaaaaaaa-export.png-b6a51feeaf42d5d1a1c29b509bee67cb.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=2
+slices/vertical=2

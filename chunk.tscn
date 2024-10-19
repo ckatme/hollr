@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://w5u76rk2umxi"]
+
+[ext_resource type="Script" path="res://Chunk.gd" id="1_3y2t5"]
+[ext_resource type="Shader" path="res://brah.gdshader" id="2_qviyn"]
+[ext_resource type="CompressedTexture2DArray" uid="uid://dwsulfv3ld1oq" path="res://aaaaaaaaa-export.png" id="3_gjauj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qtdsn"]
+frequency = 0.012
+fractal_type = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4otj"]
+render_priority = 0
+shader = ExtResource("2_qviyn")
+shader_parameter/tex = ExtResource("3_gjauj")
+
+[node name="Chunk" type="Node3D"]
+script = ExtResource("1_3y2t5")
+noise = SubResource("FastNoiseLite_qtdsn")
+mat = SubResource("ShaderMaterial_v4otj")

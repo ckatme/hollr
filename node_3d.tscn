@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3flqg74onr5g"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="2_3vnjc"]
+[ext_resource type="PackedScene" uid="uid://w5u76rk2umxi" path="res://chunk.tscn" id="2_6gccg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6g3me"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hj405"]
+
+[sub_resource type="Environment" id="Environment_g0134"]
+ambient_light_energy = 2.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0578628, 0.902585, -0.426605, 0.0364698, 0.428947, 0.902593, 0.997658, 0.0366684, -0.0577372, -7.45058e-09, 2.84496, -2.73143)
+shadow_enabled = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+script = ExtResource("2_3vnjc")
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(-0.998161, 0, 0.0606131, 0, 1, 0, -0.0606131, 0, -0.998161, 0, 0, -3.37205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("BoxMesh_6g3me")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_hj405")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g0134")
+
+[node name="Chunk" parent="." instance=ExtResource("2_6gccg")]
